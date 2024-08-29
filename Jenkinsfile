@@ -1,10 +1,15 @@
 pipeline {
-    agent any
+    agent {
+        docker { image 'python:3.8' } // Specify the Docker image you want to use
+    }
     stages {
         stage('Louis - Build Docker Image') {
             steps {
                 script {
-                    docker.build('louis-image')
+                    def image = docker.build('louis-image')
+                    image.inside {
+                        sh 'python louis.py'
+                    }
                 }
             }
         }
@@ -20,10 +25,8 @@ pipeline {
         stage('Louis - Push image to Dockerhub') {
             steps {
                 script {
-                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials') {
-                        def image = docker.build('louis-image')
-                        image.push('latest')
-                    }
+                    def image = docker.build('louis-image')
+                    image.push('latest')
                 }
             }
         }
