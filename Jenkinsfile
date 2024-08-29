@@ -23,6 +23,7 @@ pipeline {
                 script {
                     def image = docker.image('louisburress/louis-image')
                     image.push('latest')
+		    image.push("${env.BUILD_NUMBER}")
                 }
             }
         }
