@@ -21,7 +21,7 @@ pipeline {
         stage('Louis - Push image to Dockerhub') {
             steps {
                 script {
-                    docker.withRegistry('https://registry.hub.docker.com', 'dokcer_hub_key') {
+                    docker.withRegistry('https://registry.hub.docker.com', 'docker_hub_key') {
                         def image = docker.image('louisburress/louis-image')
                         image.push('latest')
                         image.push("${env.BUILD_NUMBER}")
