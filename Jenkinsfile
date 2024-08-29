@@ -5,7 +5,7 @@ pipeline {
         stage('Louis - Build Docker Image') {
             steps {
                 script {
-                    def image = docker.build('louis-image')
+                    def image = docker.build('louisburress/louis-image')
                 }
             }
         }
@@ -21,7 +21,7 @@ pipeline {
         stage('Louis - Push image to Dockerhub') {
             steps {
                 script {
-                    def image = docker.image('louis-image')
+                    def image = docker.image('louisburress/louis-image')
                     image.push('latest')
                 }
             }
