@@ -42,9 +42,7 @@ Here’s a demonstration video of the Jenkins pipeline in action:
 
 If you want to include the video directly, upload the video to a /assets/videos/ directory in this repo and link to it like this:
 
-markdown
-Copy code
-[Download Jenkins Project Video](JenkinsProject.mp4)
+
 To set up webhooks:
 
 Go to the GitHub repository settings.
