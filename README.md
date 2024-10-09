@@ -42,7 +42,7 @@ If you want to include the video directly, upload the video to a /assets/videos/
 
 markdown
 Copy code
-[Download Jenkins Project Video](assets/videos/JenkinsProject.mp4)
+[Download Jenkins Project Video](JenkinsProject.mp4)
 To set up webhooks:
 
 Go to the GitHub repository settings.
